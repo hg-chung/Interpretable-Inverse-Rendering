@@ -1,14 +1,14 @@
-# Differentiable Point-based Inverse Rendering
+# Differentiable Inverse Rendering with Interpretable Basis BRDFs
 
-This is the repository that contains source code for the [DPIR website](https://hg-chung.github.io/DPIR/).
+This is the repository that contains source code for the [Differentiable Inverse Rendering with Interpretable Basis BRDFs](https://hg-chung.github.io/IIR/).
 
-If you find DPIR useful for your work please cite:
+If you find our work useful for your work please cite:
 ```
-@inproceedings{chung2023differentiable,
-  title={Differentiable Point-based Inverse Rendering},
+@inproceedings{chung2025differentiable,
+  title={Differentiable Inverse Rendering with Interpretable Basis BRDFs},
   author={Chung, Hoon-Gyu and Choi, Seokjun and Baek, Seung-Hwan},
   booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
-  year={2024}
+  year={2025}
 }
 ```
 
