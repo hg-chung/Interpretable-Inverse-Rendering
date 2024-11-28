@@ -1,6 +1,6 @@
 # Differentiable Inverse Rendering with Interpretable Basis BRDFs
 
-This is the repository that contains source code for the [Differentiable Inverse Rendering with Interpretable Basis BRDFs](https://hg-chung.github.io/IIR/).
+This is the repository that contains source code for the [Differentiable Inverse Rendering with Interpretable Basis BRDFs](https://hg-chung.github.io/Interpretable-Inverse-Rendering/).
 
 If you find our work useful for your work please cite:
 ```
