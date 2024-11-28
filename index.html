@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({            
+          tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}            
+      });
+  </script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+  
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Differentialbe Point-based Inverse Rendering">
+  <meta name="keywords" content="Inverse Rendering, DPIR">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Differentialbe Point-based Inverse Rendering</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <!-- <link rel="icon" href="./static/images/favicon.svg"> -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://sites.google.com/view/hoongyu-chung/home">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 style='letter-spacing:-0.02em' class="title is-1 publication-title">Differentiable Point-based Inverse Rendering
+            </h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://sites.google.com/view/hoongyu-chung/home">Hoon-Gyu Chung</a>,</span>
+            <span class="author-block">
+              <a href="https://sites.google.com/view/hoongyu-chung/home">Seokjun Choi</a>,</span>
+            <span class="author-block">
+              <a href="https://sites.google.com/view/shbaek/">Seung-Hwan Baek</a>
+            </span>
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">POSTECH</span>
+          </div>
+          <div class="is-size-4 publication-authors">
+            <span class="publication-venue">CVPR 2024</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2312.02480.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2312.02480"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link.-->
+              <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=9_r12jXpJvY&t=1s"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/hg-chung/DPIR"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <span class="link-block">
+                <a href="https://drive.google.com/drive/folders/1mxabFe4BoZozNW6LF_FOT9ZFkgvpJxX6"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="columns is-centered has-text-centered">
+    <div class="hero-body">
+      <video id="teaser" autoplay muted loop playsinline width="1000" height="100%">
+        <source src="./static/videos/nvs_relighting_maneki.mp4"
+                type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf"></span> Novel view synthesis and relighting with colocated flash light.
+      </h2>
+    </div>
+  </div>
+</section>
+
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>          
+        <div class="content has-text-justified">
+          <p>
+            We present differentiable point-based inverse rendering, DPIR, an analysis-by-synthesis method that processes images captured under diverse illuminations to estimate shape and spatially-varying BRDF. 
+            To this end, we adopt point-based rendering, eliminating the need for multiple samplings per ray, typical of volumetric rendering, thus significantly enhancing the speed of inverse rendering. 
+            To realize this idea, we devise a hybrid point-volumetric representation for geometry and a regularized basis-BRDF representation for reflectance. 
+            The hybrid geometric representation enables fast rendering through point-based splatting while retaining the geometric details and stability inherent to SDF-based representations. 
+            The regularized basis-BRDF mitigates the ill-posedness of inverse rendering stemming from limited light-view angular samples. 
+            We also propose an efficient shadow detection method using point-based shadow map rendering. 
+            Our extensive evaluations demonstrate that DPIR outperforms prior works in terms of reconstruction accuracy, computational efficiency, and memory footprint. 
+            Furthermore, our explicit point-based representation and rendering enables intuitive geometry and reflectance editing.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <div class="content">
+          <h2 class="title is-3">Differentiable Forward Rendering in DPIR</h2>
+          <img src="./static/images/pipeline.jpg"
+                 class="interpolation-image"
+                 alt="Pipeline"
+                 width="100%"/>
+          <div class="content has-text-justified">
+          <p>
+            For each 3D point, its position is used as a query for the diffuse-albedo MLP $\Theta_d$, SDF MLP $\Theta_\text{SDF}$, and specular-basis coefficient MLP $\Theta_c$. 
+            The specular-basis BRDF MLP $\Theta_s$ models specular-basis reflectance, given the incident and outgoing directions $\boldsymbol{\omega_{i}}$ and $\boldsymbol{\omega_{o}}$. 
+            The point-based shadow renderer estimates the point visibility from a light source per each image. 
+            By using the diffuse albedo, normals, specular reflectance, and visibility, we compute the radiance for each point. 
+            The radiance is then projected onto a camera plane to render the pixel color through splatting-based differentiable forward rendering.
+          </p>
+          </div>
+        </div>      
+      </div>
+      </div>
+    </div>
+</section>
+
+<!--<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <div class="content">
+          <h2 class="title is-3">Regualrized basis BRDF</h2>
+          <img src="./static/images/basis_coeff.jpg"
+                 class="interpolation-image"
+                 alt="Pipeline"
+                 width="60%"/>
+          <div class="content has-text-justified">
+          <p>
+            We utilize regularized basis BRDF representation to estimate accurate spatially-varying BRDFs from limited light-view angular samples. 
+            We visualize the BRDFs on unit spheres illuminated by a point light source. 
+            (a) shows spatially-varying BRDFs of "Cow" with diverse appearance. (b) shows specular basis BRDFs and corresponding specular coefficients.
+          </p>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+</section>-->
+<!--
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <div class="content">
+          <h2 class="title is-3">Point-based Visibility Test</h2>
+          <img src="./static/images/shadow_handling.jpg"
+                 class="interpolation-image"
+                 alt="Pipeline"
+                 width="60%"/>
+          <div class="content has-text-justified">
+          <p>
+            (a) For each 3D point, its position is used as a query for the diffuse-albedo MLP $\Theta_d$, SDF MLP $\Theta_\text{SDF}$, and specular-basis coefficient MLP $\Theta_c$. 
+            The specular-basis BRDF MLP $\Theta_s$ models specular-basis reflectance, given the incident and outgoing directions $\boldsymbol{\omega_{i}}$ and $\boldsymbol{\omega_{o}}$. 
+            The point-based shadow renderer estimates the point visibility from a light source per each image. 
+            By using the diffuse albedo, normals, specular reflectance, and visibility, we compute the radiance for each point. 
+            (b) The radiance is then projected onto a camera plane to render the pixel color through splatting-based differentiable forward rendering.
+          </p>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+</section> -->
+
+<section class="section hero is-light">
+  <div class="columns is-centered has-text-centered">
+  <div class="hero-body">
+      <div class="container is-max-desktop">
+        <h2 class="title has-text-centered">Novel View Synthesis of Multi-view Multi-light Dataset</h2>
+          <div id="results-carousel" class="carousel results-carousel">
+            <div class="item">
+              <video id="teaser" autoplay muted loop playsinline width ="1000" height="100%">
+                <source src="./static/videos/nvs_buddha_1.mp4"
+                        type="video/mp4">
+              </video>
+             </div>
+             <div class="item">
+              <video id="teaser" autoplay muted loop playsinline height="100%">
+                <source src="./static/videos/nvs_cow_1.mp4"
+                        type="video/mp4">
+              </video>
+             </div>
+             <div class="item">
+              <video id="teaser" autoplay muted loop playsinline height="100%">
+                <source src="./static/videos/nvs_pot2_1.mp4"
+                        type="video/mp4">
+              </video>
+             </div>
+             <div class="item">
+              <video id="teaser" autoplay muted loop playsinline height="100%">
+                <source src="./static/videos/nvs_bear_1.mp4"
+                        type="video/mp4">
+              </video>
+             </div>
+             <div class="item">
+              <video id="teaser" autoplay muted loop playsinline height="100%">
+                <source src="./static/videos/nvs_reading_1.mp4"
+                        type="video/mp4">
+              </video>
+             </div>
+            </div>
+            </div>
+          </div>
+      </div>
+</div>  
+</section>
+
+<section class="section hero">
+  <div class="columns is-centered has-text-centered">
+  <div class="hero-body">
+      <div class="container is-max-desktop">
+          <h2 class="title is-3">Relighting of Multi-view Multi-light Dataset</h2>
+          <div id="results-carousel" class="carousel results-carousel">
+            <div class="item">
+              <video id="teaser" autoplay muted loop playsinline height="100%">
+                <source src="./static/videos/all_relighting_buddha_1.mp4"
+                        type="video/mp4">
+              </video>
+             </div>
+             <div class="item">
+              <video id="teaser" autoplay muted loop playsinline height="100%">
+                <source src="./static/videos/all_relighting_cow_1.mp4"
+                        type="video/mp4">
+              </video>
+             </div>
+             <div class="item">
+              <video id="teaser" autoplay muted loop playsinline height="100%">
+                <source src="./static/videos/all_relighting_pot2_1.mp4"
+                        type="video/mp4">
+              </video>
+             </div>
+             <div class="item">
+              <video id="teaser" autoplay muted loop playsinline height="100%">
+                <source src="./static/videos/all_relighting_bear_1.mp4"
+                        type="video/mp4">
+              </video>
+             </div>
+             <div class="item">
+              <video id="teaser" autoplay muted loop playsinline height="100%">
+                <source src="./static/videos/all_relighting_reading_1.mp4"
+                        type="video/mp4">
+              </video>
+             </div>
+        </div>
+      </div>
+</div>  
+</section>
+
+<section class="section hero is-light">
+  <div class="columns is-centered has-text-centered">
+  <div class="hero-body">
+      <div class="container is-max-desktop">
+          <h2 class="title is-3">Reconstruction Result of Photometric Dataset</h2>
+          <div id="carousel" class="carousel results-carousel">
+            <div class="item">
+              <video id="teaser" autoplay muted loop playsinline height="100%">
+                <source src="./static/videos/nvs_relighting_horse.mp4"
+                        type="video/mp4">
+              </video>
+              
+             </div>
+             <div class="item">
+              <video id="teaser" autoplay muted loop playsinline height="100%">
+                <source src="./static/videos/nvs_relighting_dragon.mp4"
+                        type="video/mp4">
+              </video>
+              
+             </div>
+             <div class="item">
+              <video id="teaser" autoplay muted loop playsinline height="100%">
+                <source src="./static/videos/nvs_relighting_head.mp4"
+                        type="video/mp4">
+              </video>
+              
+             </div>
+             <div class="item">
+              <video id="teaser" autoplay muted loop playsinline height="100%">
+                <source src="./static/videos/nvs_relighting_maneki.mp4"
+                        type="video/mp4">
+              </video>
+              
+             </div>
+        </div>
+      </div>
+</div>  
+</section>
+
+
+<section class="section hero">
+  <div class="columns is-centered has-text-centered">
+      <div class="hero-body">
+            <div class="container is-max-desktop">
+              <h2 class="title is-3">Applications</h2>
+              <div id="carousel" class="carousel2 results-carousel">
+               <div class="item">
+                <!-- Your image here -->
+                <img src="static/images/reflectance_change.jpg" alt="MY ALT TEXT"/>
+                <h2 class="subtitle has-text-centered">
+                  Reflectance change
+                </h2>
+               </div>
+               <div class="item">
+                <!-- Your image here -->
+                <img src="static/images/geometry_removal.jpg" alt="MY ALT TEXT"/>
+                <h2 class="subtitle has-text-centered">
+                  Geometry removal
+                </h2>
+               </div>
+               <div class="item">
+                <!-- Your image here -->
+                <img src="static/images/object_merging.jpg" alt="MY ALT TEXT"/>
+                <h2 class="subtitle has-text-centered">
+                 Object merging
+                </h2>
+               </div>
+               <div class="item">
+              <!-- Your image here -->
+                <img src="static/images/envmap_relighting0.jpg" alt="MY ALT TEXT"/>
+                <h2 class="subtitle has-text-centered">
+                Environment map relighting
+                </h2>
+               </div>
+            </div>
+          </div>
+      </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@inproceedings{chung2023differentiable,
+  title={Differentiable Point-based Inverse Rendering},
+  author={Chung, Hoon-Gyu and Choi, Seokjun and Baek, Seung-Hwan},
+  booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  year={2024}
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="https://arxiv.org/pdf/2312.02480.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/hg-chung/DPIR" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
