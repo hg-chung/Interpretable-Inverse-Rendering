@@ -143,23 +143,26 @@
   </div>
 </section>
 
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-  <div class="columns is-centered has-text-centered">
-    <div class="hero-body">
+<div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
       <div class="column is-full-width">
-      <img src="./static/images/teaser.jpg"
+        <div class="content">
+          <h2 class="title is-3">Gaussian Inverse Rendering with Interpretable Basis BRDFs</h2>
+          <img src="./static/images/pipeline.jpg"
                  class="interpolation-image"
-                 alt="Teaser"
+                 alt="Pipeline"
                  width="100%"/>
-      <h2 class="subtitle has-text-centered">
-        <span class="dnerf"></span> Overview of differentiable inverse rendering with interpretable basis BRDFs.
-      </h2>
+          <div class="content has-text-justified">
+          <p>
+            Given a set of multi-view photometric images, we initialize point cloud and extract base color for basis BRDFs.
+            We jointly optimize 2D Gaussians and basis BRDFs by comparing the differentiably-rendered images and the input images. 
+            Our method enables obtaining interpretable basis BRDFs with spatially-separated basis-BRDF weights and the number of basis BRDFs adapts to the scene.
+          </p>
+          </div>
+        </div>      
+      </div>
+      </div>
     </div>
-    </div>
-    </div>
-  </div>
-</section>
 
 <section class="section hero is-light">
   <div class="container is-max-desktop">
