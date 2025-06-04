@@ -11,7 +11,7 @@ Hoon-Gyu Chung, Seokjun Choi, Seung-Hwan Baek
 ***CVPR, 2025***
 
 <p align="center">
-    <img src='docs/teaser.png' width="800">
+    <img src='docs/teaser.jpg' width="800">
 </p>
 
 ## Installation
