@@ -11,11 +11,11 @@ python train.py -s data/multi_object3  \
                 --basis_merge_threshold 0.03
                         
 python train.py -s data/multi_object4  \
-                --lambda_weight_img_sparse 0.01 \
+                --lambda_weight_img_sparse 0.005 \
                 --basis_merge_threshold 0.015
 
 python train.py -s data/real1  \
-                --lambda_weight_sparse 0.01 \
+                --lambda_weight_img_sparse 0.005 \
                 --basis_merge_threshold 0.015 \
                 --gamma
                 
