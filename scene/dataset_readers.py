@@ -176,7 +176,7 @@ def readColmapSceneInfo(path, images, eval, llffhold=6):
     reading_dir = "images" if images == None else images
     cam_infos_unsorted, camera_centers = readColmapCameras(cam_extrinsics=cam_extrinsics, cam_intrinsics=cam_intrinsics, images_folder=os.path.join(path, reading_dir))
     cam_infos = sorted(cam_infos_unsorted.copy(), key = lambda x : x.image_name)
-    init_colors = np.load(os.path.join(path, "init_colors_30.npy"))
+    init_colors = np.load(os.path.join(path, "init_colors_12.npy"))
     np.random.seed(40)
     eval_idx = np.random.permutation(len(cam_infos))[:(len(cam_infos)//llffhold)]
 
@@ -275,7 +275,7 @@ def readNerfSyntheticInfo(path, white_background, eval, init, extension=".png"):
     train_cam_infos, train_camera_centers = readCamerasFromTransforms(path, "transforms_train.json", white_background, extension)
     print("Reading Test Transforms")
     test_cam_infos, test_camera_centers = readCamerasFromTransforms(path, "transforms_test.json", white_background, extension)
-    init_colors = np.load(os.path.join(path, "init_colors_30.npy"))
+    init_colors = np.load(os.path.join(path, "init_colors_12.npy"))
     
     if not eval:
         train_cam_infos.extend(test_cam_infos)
