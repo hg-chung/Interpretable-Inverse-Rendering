@@ -31,7 +31,7 @@ conda install pytorch3d -c pytorch3d
 ## Dataset
 ** We utilized multi-view flash image dataset: 4 synthetic scenes and 2 real-world scenes.**
 
-You can download dataset from [Google Drive](https://drive.google.com/drive/folders/1QMlU7leXc9KSnA1Ojuq6udFsrrPDQsyf) and put them in the corresponding folder.
+You can download dataset from [Google Drive](https://drive.google.com/file/d/1Qbopa0Df80jDUawfb0yA6eBgN_d_TQVT/view?usp=sharing) and put them in the corresponding folder.
 
 ## Train and Evaluation
 ```bash
