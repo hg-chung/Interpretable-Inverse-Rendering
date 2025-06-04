@@ -146,8 +146,9 @@ class GaussianModel:
         self.spatial_lr_scale = spatial_lr_scale
         fused_point_cloud = torch.tensor(np.asarray(pcd.points)).float().cuda()
         self.init_colors = init_base_color.float().to("cuda")
-        kmeans = KMeans(n_clusters=self.num_basis, random_state=0).fit(init_base_color)
-        self.representative_colors = torch.tensor(kmeans.cluster_centers_, dtype=torch.float, device="cuda")
+        #kmeans = KMeans(n_clusters=self.num_basis, random_state=0).fit(init_base_color)
+        #self.representative_colors = torch.tensor(kmeans.cluster_centers_, dtype=torch.float, device="cuda")
+        self.representative_colors = torch.tensor(init_base_color, dtype=torch.float, device="cuda")
         self.light_scale = light_scale
         print("Number of points at initialisation : ", fused_point_cloud.shape[0])
         print("number of Representative colors : ", self.representative_colors.shape[0])
