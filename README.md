@@ -38,6 +38,7 @@ You can download dataset from [Google Drive](https://drive.google.com/file/d/1Qb
 sh train.sh
 sh evaluation.sh
 ```
+You can control sparsity by adjusting lambda_weight_img_sparse and basis_merge_threshold.
 
 ## Citation
 If you find this work useful in your research, please consider citing: 
