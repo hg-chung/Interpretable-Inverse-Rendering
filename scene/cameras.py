@@ -61,7 +61,7 @@ class Camera(nn.Module):
                                                           cx=self.cx, cy=self.cy, width=self.image_width, height=self.image_height, fovX=self.FoVx, fovY=self.FoVy).transpose(0,1).cuda()
         self.full_proj_transform = (self.world_view_transform.unsqueeze(0).bmm(self.projection_matrix.unsqueeze(0))).squeeze(0)
         self.camera_center = self.world_view_transform.inverse()[3, :3]
-        self.light_position = torch.tensor(np.matmul(R.transpose(1,0),light_position),dtype=torch.float32).cuda() + self.camera_center
+        self.light_position = torch.tensor(np.matmul(R,light_position),dtype=torch.float32).cuda() + self.camera_center
         self.light_intensity = light_intensity
 
 
